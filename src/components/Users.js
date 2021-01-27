@@ -1,24 +1,24 @@
 import React, {useState} from 'react'
 import UserForm from './UserForm'
+import User from './User'
 
 const Users =() =>{
     const [users, setUsers] = useState([])
+    //addUser adds object/user from UserForm component. 
+    //The form includes username and password to add on to the initial state of users.
     const addUser = (user) =>{
         setUsers(users => [...users, {...user}])
     }
     return (
         <div>
-            <div>
+        <UserForm addUser={addUser}/>
+        <div>
                 {users.map(u => {
                     return(
-                    <>
-                    {u.username}
-                    {u.password}
-                    </>
+                    <User username={u.username} password={u.password}/>
                     )
                 })}
             </div>
-        <UserForm addUser={addUser}/>
         </div>
     )
 }
