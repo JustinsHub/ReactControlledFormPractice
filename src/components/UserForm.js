@@ -1,12 +1,13 @@
 import React, {useState} from 'react'
 
-const UserForm =() =>{
+const UserForm =({addUser}) =>{
     const INITIAL_STATE = {
         username: "",
         password: ""
     }
     const [formData, setFormData] = useState(INITIAL_STATE)
 
+    //Updating the value of the current state by handleChange
     const handleChange = (e) =>{
         const {name, value} = e.target
         setFormData(formData => ({...formData, [name]:value}))
@@ -14,7 +15,8 @@ const UserForm =() =>{
 
     const handleSubmit = (e)=>{
         e.preventDefault()
-        console.log(`${formData.username} logged in!`)
+        addUser({...formData})
+        setFormData(INITIAL_STATE)
     }
 
     return (
