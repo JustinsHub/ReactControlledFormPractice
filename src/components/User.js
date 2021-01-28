@@ -3,8 +3,8 @@ import React from 'react'
 const User = ({username, password}) =>{
     return (
         <div>
-            <p>{username}</p>
-            <p>{password}</p>
+            <p>Username: {username}</p>
+            <p>Password: {password}</p>
         </div>
     )
 }

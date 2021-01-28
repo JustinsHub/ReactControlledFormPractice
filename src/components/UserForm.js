@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './UserForm.css'
 
 const UserForm =({addUser}) =>{
     const INITIAL_STATE = {
@@ -12,7 +13,8 @@ const UserForm =({addUser}) =>{
         const {name, value} = e.target
         setFormData(formData => ({...formData, [name]:value}))
     }
-
+    //Takes parent(Users.js) function addUser to add this forms state input as an object.
+    //This function only takes objects in. It's based on how the formData is on this state.
     const handleSubmit = (e)=>{
         e.preventDefault()
         addUser({...formData})
@@ -20,8 +22,10 @@ const UserForm =({addUser}) =>{
     }
 
     return (
-        <div>
+        <div className="UserForm">
+            <h3>Mini-Form</h3>
             <form onSubmit={handleSubmit}>
+            <div className="UserForm-username">
                 <label htmlFor="username">Username:</label>
                 <input 
                 id="username" 
@@ -30,8 +34,10 @@ const UserForm =({addUser}) =>{
                 name="username"
                 value={formData.username}
                 onChange={handleChange}
-                />   
+                />
+            </div>
 
+            <div className="UserForm-password">
                 <label htmlFor="password">Password:</label>
                 <input 
                 id="password" 
@@ -41,7 +47,10 @@ const UserForm =({addUser}) =>{
                 value={formData.password}
                 onChange={handleChange}
                 />
-                <button>Login</button>
+            </div>
+                <div className="UserForm-button-div">
+                <button className="UserForm-button">Login</button>
+                </div>
             </form>
         </div>
     )

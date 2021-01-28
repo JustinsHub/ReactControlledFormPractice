@@ -1,0 +1,29 @@
+.UserForm {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 25%;
+	margin-right: 25%;
+	border: solid black;
+	padding: 25px;
+}
+
+.UserForm-username {
+	margin: 5px;
+}
+
+.UserForm-passowrd {
+	margin: 5px;
+}
+
+.UserForm-button-div {
+	margin: 5px;
+}
+
+.UserForm-button {
+	background-color: rgba(189, 60, 60, 0.603);
+	color: white;
+	border-radius: 10%;
+	border: none;
+	padding: 7px 20px;
+	text-align: center;
+}

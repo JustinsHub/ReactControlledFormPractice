@@ -13,11 +13,12 @@ const Users =() =>{
         setUsers(users => [...users, {...user}])
     }
     return (
-        <div>
+        <div className="Users">
         <UserForm addUser={addUser}/>
         <div>
                 {users.map(u => {
-                    //Users UI for any users that are being added.
+                    //Mapping through users state to see if there are values in there.
+                    //Users UI for any users that are being added from addUser function.
                     return(
                     <User username={u.username} password={u.password}/>
                     )
